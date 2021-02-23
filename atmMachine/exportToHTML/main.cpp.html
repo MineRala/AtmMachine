@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>main.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.cpp</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;iostream&gt;</span>
+<span class="s3">using namespace </span><span class="s1">std</span><span class="s3">;</span>
+
+<span class="s3">int </span><span class="s1">main() {</span>
+
+<span class="s3">int </span><span class="s1">balance</span><span class="s3">;</span>
+<span class="s1">cout&lt;&lt;</span><span class="s2">&quot;Welcome atm machine,&quot;</span><span class="s1">&lt;&lt;endl</span><span class="s3">;</span>
+<span class="s1">cout&lt;&lt;</span><span class="s2">&quot;Please enter your account balance : &quot;</span><span class="s3">;</span>
+<span class="s1">cin&gt;&gt;balance</span><span class="s3">;</span>
+<span class="s1">cout&lt;&lt;</span><span class="s2">&quot;Your account balance is &quot;</span><span class="s1">&lt;&lt;balance&lt;&lt;endl</span><span class="s3">;</span>
+<span class="s3">int </span><span class="s1">operationNumber</span><span class="s3">;</span>
+
+<span class="s3">do </span><span class="s1">{</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;******** Menu Options ********&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;1-Withdraw money from account&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;2-Deposit the account&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;3-Money transfer&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;4-Do leftovers&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;5-Credit card debt payment&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;6-Paying bills&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;7-Exists atm machine&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+
+    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Please enter the number you want to trade: &quot;</span><span class="s3">;</span>
+    <span class="s1">cin &gt;&gt; operationNumber</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">amount</span><span class="s3">;</span>
+
+    <span class="s3">switch </span><span class="s1">(operationNumber) {</span>
+        <span class="s3">case </span><span class="s4">1</span><span class="s1">:</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the money you want to withdraw from the account: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                <span class="s1">balance -= amount</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s3">else</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">2</span><span class="s1">:</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you want to deposit:&quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+            <span class="s1">balance += amount</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">3</span><span class="s1">:</span>
+            <span class="s3">int </span><span class="s1">accountNo</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the account number to be transferred: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; accountNo</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;The account number to which the money will be deposited : &quot; </span><span class="s1">&lt;&lt; accountNo &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you will transfer: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                <span class="s1">balance -= amount</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; accountNo &lt;&lt; </span><span class="s2">&quot;to account numbered&quot; </span><span class="s1">&lt;&lt; amount &lt;&lt; </span><span class="s2">&quot;TL transfer was made.&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s3">else</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">4</span><span class="s1">:</span>
+            <span class="s3">int </span><span class="s1">accNo</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the account number you will eft: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; accNo</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;The account number you will eft: &quot; </span><span class="s1">&lt;&lt; accNo &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you want to eft: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                <span class="s1">balance -= amount</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; amount &lt;&lt; </span><span class="s2">&quot; TL your eft transaction has been completed.&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s3">else</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">5</span><span class="s1">:</span>
+            <span class="s3">int </span><span class="s1">creditCardNumber</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the credit card number you want to pay with:&quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; creditCardNumber</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you want to pay: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                <span class="s1">balance -= amount</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; creditCardNumber &lt;&lt; </span><span class="s2">&quot; numbered card &quot; </span><span class="s1">&lt;&lt; amount &lt;&lt; </span><span class="s2">&quot; TL payment completed.&quot;</span><span class="s1">&lt;&lt;endl</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s3">else</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">6</span><span class="s1">:</span>
+            <span class="s3">int </span><span class="s1">billChoice</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;1-Electricity bill&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;2-Water bill&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;3-Natural gas bill&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;4-Phone bill&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the invoice type number you want to pay: &quot;</span><span class="s3">;</span>
+            <span class="s1">cin &gt;&gt; billChoice</span><span class="s3">;</span>
+            <span class="s3">if </span><span class="s1">(billChoice == </span><span class="s4">1</span><span class="s1">) {</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you have to pay: &quot;</span><span class="s3">;</span>
+                <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+                <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                    <span class="s1">balance -= amount</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; amount &lt;&lt; </span><span class="s2">&quot; TL your electricity bill has been paid.&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">} </span><span class="s3">else</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">}</span>
+            <span class="s3">if </span><span class="s1">(billChoice == </span><span class="s4">2</span><span class="s1">) {</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you have to pay: &quot;</span><span class="s3">;</span>
+                <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+                <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                    <span class="s1">balance -= amount</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; amount &lt;&lt; </span><span class="s2">&quot;TL your water bill has been paid. &quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">} </span><span class="s3">else</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">}</span>
+            <span class="s3">if </span><span class="s1">(billChoice == </span><span class="s4">3</span><span class="s1">) {</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you have to pay: &quot;</span><span class="s3">;</span>
+                <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+                <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                    <span class="s1">balance -= amount</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; amount &lt;&lt; </span><span class="s2">&quot;TL your natural gas bill has been paid. &quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">} </span><span class="s3">else</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">}</span>
+            <span class="s3">if </span><span class="s1">(billChoice == </span><span class="s4">4</span><span class="s1">) {</span>
+                <span class="s3">int </span><span class="s1">phoneNumber</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the phone number you want to pay with:&quot;</span><span class="s3">;</span>
+                <span class="s1">cin &gt;&gt; phoneNumber</span><span class="s3">;</span>
+                <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Enter the amount you have to pay: &quot;</span><span class="s3">;</span>
+                <span class="s1">cin &gt;&gt; amount</span><span class="s3">;</span>
+                <span class="s3">if </span><span class="s1">(balance &gt;= amount) {</span>
+                    <span class="s1">balance -= amount</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; phoneNumber &lt;&lt; </span><span class="s2">&quot; to phone number&quot; </span><span class="s1">&lt;&lt; amount &lt;&lt; </span><span class="s2">&quot; TL your telephone bill has been paid. &quot;</span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;New account balance is: &quot; </span><span class="s1">&lt;&lt; balance &lt;&lt; endl</span><span class="s3">;</span>
+                <span class="s1">} </span><span class="s3">else</span>
+                    <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You have insufficient funds in your account!&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+            <span class="s1">}</span>
+            <span class="s3">break;</span>
+        <span class="s3">case </span><span class="s4">7</span><span class="s1">:</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;Exists atm machine, see you.&quot;</span><span class="s3">;</span>
+            <span class="s3">break;</span>
+        <span class="s3">default</span><span class="s1">:</span>
+            <span class="s1">cout &lt;&lt; </span><span class="s2">&quot;You entered an incorrect transaction number! enter numbers between 1-7 again.&quot; </span><span class="s1">&lt;&lt; endl</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+<span class="s3">while </span><span class="s1">(operationNumber != </span><span class="s4">7</span><span class="s1">)</span><span class="s3">;</span>
+<span class="s3">return </span><span class="s4">0</span><span class="s3">;</span>
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>
